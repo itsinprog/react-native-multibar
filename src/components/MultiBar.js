@@ -131,8 +131,8 @@ const Styles = {
         alignItems: 'flex-end'
     },
     tabStyle: {
-        height: 50,
-        width: 50,
+        height: 25,
+        width: 75,
         alignItems: 'center',
         justifyContent: 'center'
     }
