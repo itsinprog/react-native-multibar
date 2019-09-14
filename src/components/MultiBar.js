@@ -1,85 +1,92 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+<<<<<<< HEAD
 import {SafeAreaView, TouchableOpacity, View} from 'react-native';
 import { isIphoneX } from '../utils/isX';
+=======
+import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
+>>>>>>> ca65d5e2109a11fa447a0be75be7cea2f57ffd4b
 
-import {Colors} from '../utils';
+import { Colors } from '../utils';
+import { TabIcon } from './TabIcon';
+import { MultibarStyles } from './Styles';
 
-const MultiBar = ({style, navigation, activeTintColor, inactiveTintColor, renderIcon, jumpTo}) => {
-    const {
-        index,
-        routes
-    } = navigation.state;
+const Styles = MultibarStyles;
 
-    return (
-        <SafeAreaView
-            pointerEvents="box-none"
-            style={Styles.container}
-            forceInset={{
-                top: 'never',
-                bottom: 'always',
-            }}
-        >
-            <SafeAreaView
-                style={[Styles.fakeBackground, style]}
-                forceInset={{
-                    top: 'never',
-                    bottom: 'always',
-                }}
-            >
-                <View style={{height: 49}}/>
-            </SafeAreaView>
-            <View
-                pointerEvents="box-none"
-                style={Styles.content}
-            >
-                {
-                    routes.map((route, idx) => {
-                        const focused = index === idx;
+const MultiBar = ({ style, navigation, activeTintColor, inactiveTintColor, renderIcon, jumpTo }) => {
+  const {
+    index,
+    routes
+  } = navigation.state;
 
-                        if (!route.params || !route.params.navigationDisabled) {
-                            return (
-                                <TabIcon
-                                    key={route.key}
-                                    route={route}
-                                    renderIcon={renderIcon}
-                                    focused={focused}
-                                    activeTintColor={activeTintColor}
-                                    inactiveTintColor={inactiveTintColor}
-                                    onPress={() => (!route.params || !route.params.navigationDisabled) && jumpTo(route.key)}
-                                />
-                            );
-                        }
+  return (
+    <SafeAreaView
+      pointerEvents="box-none"
+      style={Styles.container}
+      forceInset={{
+        top: 'never',
+        bottom: 'always'
+      }}
+    >
+      <SafeAreaView
+        style={[Styles.fakeBackground, style]}
+        forceInset={{
+          top: 'never',
+          bottom: 'always'
+        }}
+      >
+        <View style={{ height: 49 }}/>
+      </SafeAreaView>
+      <View
+        pointerEvents="box-none"
+        style={Styles.content}
+      >
+        {routes.map((route, idx) => {
+          const focused = index === idx;
 
-                        const Icon = renderIcon({
-                            route,
-                            focused,
-                            tintColor: focused
-                                ? activeTintColor
-                                : inactiveTintColor
-                        });
+          if (!route.params || !route.params.navigationDisabled) {
+            return (
+              <TabIcon
+                key={route.key}
+                route={route}
+                renderIcon={renderIcon}
+                focused={focused}
+                activeTintColor={activeTintColor}
+                inactiveTintColor={inactiveTintColor}
+                onPress={() => (!route.params || !route.params.navigationDisabled) && jumpTo(route.key)}
+              />
+            );
+          }
 
-                        return {
-                            ...Icon,
-                            key: 'simple'
-                        };
-                    })
-                }
-            </View>
-        </SafeAreaView>
-    );
+          const Icon = renderIcon({
+            route,
+            focused,
+            tintColor: focused
+              ? activeTintColor
+              : inactiveTintColor
+          });
+
+          return {
+            ...Icon,
+            key: 'simple'
+          };
+        })}
+      </View>
+    </SafeAreaView>
+  );
 };
 
 MultiBar.propTypes = {
-    style: PropTypes.object.isRequired,
-    navigation: PropTypes.object.isRequired,
-    renderIcon: PropTypes.func.isRequired,
-    jumpTo: PropTypes.func.isRequired,
-    activeTintColor: PropTypes.string,
-    inactiveTintColor: PropTypes.string,
+  style: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired,
+  renderIcon: PropTypes.func.isRequired,
+  jumpTo: PropTypes.func.isRequired,
+  activeTintColor: PropTypes.string,
+  inactiveTintColor: PropTypes.string
 };
 
 MultiBar.defaultProps = {
+<<<<<<< HEAD
     activeTintColor: Colors.activeTintColor,
     inactiveTintColor: Colors.inactiveTintColor
 };
@@ -137,6 +144,10 @@ const Styles = {
         alignItems: 'center',
         justifyContent: 'center'
     }
+=======
+  activeTintColor: Colors.activeTintColor,
+  inactiveTintColor: Colors.inactiveTintColor
+>>>>>>> ca65d5e2109a11fa447a0be75be7cea2f57ffd4b
 };
 
-export {MultiBar};
+export { MultiBar };
