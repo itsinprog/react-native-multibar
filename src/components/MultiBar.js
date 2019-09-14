@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-<<<<<<< HEAD
 import {SafeAreaView, TouchableOpacity, View} from 'react-native';
 import { isIphoneX } from '../utils/isX';
-=======
-import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
->>>>>>> ca65d5e2109a11fa447a0be75be7cea2f57ffd4b
 
 import { Colors } from '../utils';
 import { TabIcon } from './TabIcon';
@@ -86,7 +82,6 @@ MultiBar.propTypes = {
 };
 
 MultiBar.defaultProps = {
-<<<<<<< HEAD
     activeTintColor: Colors.activeTintColor,
     inactiveTintColor: Colors.inactiveTintColor
 };
@@ -144,10 +139,6 @@ const Styles = {
         alignItems: 'center',
         justifyContent: 'center'
     }
-=======
-  activeTintColor: Colors.activeTintColor,
-  inactiveTintColor: Colors.inactiveTintColor
->>>>>>> ca65d5e2109a11fa447a0be75be7cea2f57ffd4b
 };
 
 export { MultiBar };
