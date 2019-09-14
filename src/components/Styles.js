@@ -75,8 +75,8 @@ export const MultibarToggleStyles = {
 export const TabIconStyles = {
   tabStyle: {
     flex: 1,
-    height: 50,
-    width: 50,
+    height: 25,
+    width: 75,
     alignItems: 'center',
     justifyContent: 'center'
   },
