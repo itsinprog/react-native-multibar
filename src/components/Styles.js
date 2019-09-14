@@ -1,4 +1,5 @@
 import { Dimensions } from 'react-native';
+import { isIphoneX } from '../utils/isX';
 
 import { Colors } from '../utils/Colors';
 
@@ -7,7 +8,7 @@ const { width, height } = Dimensions.get('window');
 export const MultibarStyles = {
   container: {
     position: 'absolute',
-    bottom: 0,
+    bottom: isIphoneX() ? 0 : 20,
     width: '100%',
     justifyContent: 'flex-end',
     minHeight: 160
